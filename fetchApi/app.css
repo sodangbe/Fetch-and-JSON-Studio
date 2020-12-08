@@ -1,0 +1,36 @@
+.avatar {
+    border-radius: 50%;
+    height: 100px;
+    float: right;
+}
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+}
+.astronaut {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background: #e0dcdb;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s, transform 0.2s linear;
+    transform: translateY(-50px);
+}
+.appear {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+#container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+.active {
+    color: green;
+}

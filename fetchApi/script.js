@@ -1,28 +1,37 @@
-async function getPlanets() {
-    let url = 'https://handlers.education.launchcode.org/static/planets.json';
-    try {
-        let res = await fetch(url);
-        return await res.json();
-    } catch (error) {
-        console.log(error);
-    }
+async function getAstronauts() {
+  let url = "https://handlers.education.launchcode.org/static/astronauts.json";
+  try {
+    let res = await fetch(url);
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-async function renderPlanets() {
-    let planets = await getPlanets();
-    let html = '';
-    planets.forEach(planet => {
-        let htmlSegment = `<div class="planet">
-                            <img src="${planet.image}" >
-                            <h2>${planet.name} ${planet.star}</h2>
-                            <div class="moon"><a href="${planet.image}">${planet.distance}</a></div>
-                        </div>`;
+async function renderAstronauts() {
+  let astronauts = await getAstronauts();
+  let html = "";
+  astronauts.forEach((astronaut) => {
+    let htmlSegment = `<div class="astronaut">
+        <div class="bio">
+        <h3>${astronaut.firstName} - ${astronaut.lastName}</h3>
+        <ul>
+           <li>Hours in Space: ${astronaut.hoursInSpace}</li>
+           <li class="${astronaut.active ? "active" : ""}">Active: ${
+      astronaut.active
+    }</li>
+           <li>Skills: ${astronaut.skills.join(", ")}</li>
+        </ul>
+     </div>
+     <img class="avatar" src="${astronaut.picture}">
+    </div>`;
 
-        html += htmlSegment;
-    });
+    html += htmlSegment;
+    //console.log(htmlSegment)
+  });
 
-    let container = document.querySelector('.container');
-    container.innerHTML = html;
+  let container = document.querySelector(".container");
+  container.innerHTML= html;
 }
 
-renderPlanets();
+renderAstronauts();
