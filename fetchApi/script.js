@@ -27,10 +27,10 @@ async function renderAstronauts() {
     </div>`;
 
     html += htmlSegment;
-    //console.log(htmlSegment)
+    console.log(htmlSegment)
   });
 
-  let container = document.querySelector(".container");
+  const container = document.getElementById("astronauts");
   container.innerHTML= html;
 }
 
