@@ -12,10 +12,10 @@ async function renderPlanets() {
     let planets = await getPlanets();
     let html = '';
     planets.forEach(planet => {
-        let htmlSegment = `<div class="user">
-                            <img src="${planet.profileURL}" >
+        let htmlSegment = `<div class="planet">
+                            <img src="${planet.image}" >
                             <h2>${planet.name} ${planet.star}</h2>
-                            <div class="moon"><a href="email:${planet.moon}">${planet.diameter}</a></div>
+                            <div class="moon"><a href="${planet.image}">${planet.distance}</a></div>
                         </div>`;
 
         html += htmlSegment;
@@ -25,4 +25,4 @@ async function renderPlanets() {
     container.innerHTML = html;
 }
 
-renderUsers();
+renderPlanets();
