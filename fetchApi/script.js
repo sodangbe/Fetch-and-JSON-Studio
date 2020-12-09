@@ -25,7 +25,7 @@ async function renderAstronauts() {
      </div>
      <img class="avatar" src="${astronaut.picture}">
     </div>`;
-
+      
     html += htmlSegment;
     console.log(htmlSegment)
   });
