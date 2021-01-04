@@ -23,9 +23,22 @@
  </script>
  <body>
     <form method="POST" action="https://handlers.education.launchcode.org/request-parrot">
-       <label>Username <input type="text" name="username"></label>
-       <label>Team Name <input type="text" name="team"></label>
-       <button>Submit</button>
+       <label>Test Name<input type="text" name="testname"/></label>
+       <label for="testdate">Test Date <input id ="testdate" type="date" name="testdate"/></label>
+       <label for="rocketType">Rocket Type <select name="rocketType">
+        <option value="">Lynx</option>
+        <option value="1">Brant</option>
+        <option value="2">Orion</option>
+        <option value="3">Terrier</option>
+      </select></label>
+      <label for="boosterCount">Number of Rocket Boosters <input type="number"
+        name="boosterCount" min="1" max="9"/></label>
+        <label for="windRating">Flight Rating:
+            <label>No Wind<input type="radio" name="windRating" value=0/></label>
+            <label>Mild<input type="radio" name="windRating" value=10/></label>
+            <label>Strong<input type="radio" name="windRating" value=20/></label></label>
+            <label>Use production grade servers<input type="checkbox" name="productionServers"/></label>
+        <button>Run Simulation</button>
     </form>
     <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
     </p>
